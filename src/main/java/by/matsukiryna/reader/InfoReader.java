@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class InfoReader {
     private static final String REGEX_DELIMITER = "\\s+";
-    static Logger logger = LogManager.getLogger();
     final String FILE_PATH = "file.txt";
 
     public String[] getDataFromFile() {
