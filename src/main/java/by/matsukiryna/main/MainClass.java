@@ -11,6 +11,8 @@ import java.util.Arrays;
 
 public class MainClass {
     static Logger logger = LogManager.getLogger();
+    private static final int OLD_NUMBER = 0;
+    private static final int NEW_NUMBER = 99;
 
     public static void main(String[] args) {
         InfoReader readerFile = new InfoReader();
@@ -20,11 +22,7 @@ public class MainClass {
         ArrayCreator creator = new ArrayCreator();
         int[] numbers = creator.factoryArray(strNumbers);
         logger.info(Arrays.toString(numbers));
-
         ArrayService arrayService = new ArrayService();
-
-        arrayService.sort(numbers);
-        logger.info("Sorted array: " + Arrays.toString(numbers));
 
         int negativeNumbersCounter = arrayService.countNegativeArrayElements(numbers);
         logger.info("Number of negative array elements : " + negativeNumbersCounter);
@@ -38,9 +36,7 @@ public class MainClass {
         double average = arrayService.findAverage(numbers);
         logger.info("Average from array : " + average);
 
-        int oldNumber = 0;
-        int newNumber = 99;
-        arrayService.replace(numbers, oldNumber, newNumber);
+        arrayService.replace(numbers, OLD_NUMBER, NEW_NUMBER);
         logger.info("Replaced array: " + Arrays.toString(numbers));
 
 
