@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 public class StringFilter {
     static Logger logger = LogManager.getLogger();
-    //private static final String REGEX_DIGIT = "-?\\d+";
 
     public String[] filterInt(String[] numbers) {
         String[] validStr = new String[numbers.length];
