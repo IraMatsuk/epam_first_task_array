@@ -1,0 +1,6 @@
+# Excluded files
+.idea/
+*.iml
+/target/
+/logs/
+
