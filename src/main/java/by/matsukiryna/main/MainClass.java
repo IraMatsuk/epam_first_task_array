@@ -16,7 +16,7 @@ public class MainClass {
 
     public static void main(String[] args) {
         InfoReader readerFile = new InfoReader();
-        String[] stringsFromFile = readerFile.getData();
+        String[] stringsFromFile = readerFile.getDataFromFile();
         StringFilter filter = new StringFilter();
         String[] strNumbers = filter.filterInt(stringsFromFile);
         ArrayCreator creator = new ArrayCreator();
@@ -38,37 +38,5 @@ public class MainClass {
 
         arrayService.replace(numbers, OLD_NUMBER, NEW_NUMBER);
         logger.info("Replaced array: " + Arrays.toString(numbers));
-
-
-        // Read from console:
-        /*InfoReader reader = new InfoReader();
-        String[] strings = reader.readStringArray();
-        StringFilter filter = new StringFilter();
-        String[] strNumbers = filter.filterInt(strings);
-        ArrayCreator creator = new ArrayCreator();
-        int[] numbers = creator.factoryArray(strNumbers);
-        logger.info(Arrays.toString(numbers));
-        logger.info(Arrays.toString(numbers));
-
-        ArraySorting arraySorting = new ArraySorting();
-        arraySorting.sort(numbers);
-        logger.info("Sorted array: " + Arrays.toString(numbers));
-
-        int negativeNumbersCounter = arraySorting.countNegativeArrayElements(numbers);
-        logger.info("Number of negative array elements : " + negativeNumbersCounter);
-
-        int positiveNumbersCounter = arraySorting.countPositiveArrayElements(numbers);
-        logger.info("Number of positive array elements : " + positiveNumbersCounter);
-
-        int sumIntArray = arraySorting.sumArray(numbers);
-        logger.info("Sum of all array elements: " + sumIntArray);
-
-        double average = arraySorting.findAverage(numbers);
-        logger.info("Average from array : " + average);
-
-        int oldNumber = 0;
-        int newNumber = 99;
-        arraySorting.replace(numbers, oldNumber, newNumber);
-        logger.info("Replaced array: " + Arrays.toString(numbers));*/
     }
 }
