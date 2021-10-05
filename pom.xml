@@ -7,7 +7,7 @@
     <groupId>by.matsukiryna</groupId>
     <artifactId>epam_first_task_array</artifactId>
     <version>1.0-SNAPSHOT</version>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -31,5 +31,4 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
-
 </project>
