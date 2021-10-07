@@ -65,6 +65,7 @@ public class ArrayServiceIntStreamImpl implements ArrayService {
     @Override
     public int[] replace(ArrayEntity arrayEntity, int oldNumber, int newNumber) {
         IntStream intStream = Arrays.stream(arrayEntity.getArrayEntity());
+        //TODO
         return intStream.toArray();
     }
 }

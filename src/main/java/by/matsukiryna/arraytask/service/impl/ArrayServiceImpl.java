@@ -3,8 +3,13 @@ package by.matsukiryna.arraytask.service.impl;
 import by.matsukiryna.arraytask.entity.ArrayEntity;
 import by.matsukiryna.arraytask.exception.ArrayException;
 import by.matsukiryna.arraytask.service.ArrayService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public class ArrayServiceImpl implements ArrayService {
+    static Logger logger = LogManager.getLogger();
 
     @Override
     public int[] replace(ArrayEntity arrayEntity, int oldNumber, int newNumber) {
@@ -14,6 +19,7 @@ public class ArrayServiceImpl implements ArrayService {
                 tmpArray[i] = newNumber;
             }
         }
+        logger.info("Replaced array: " + Arrays.toString(tmpArray));
         return tmpArray;
     }
 
@@ -26,6 +32,7 @@ public class ArrayServiceImpl implements ArrayService {
             sumAllArraysElements += tmpArray[i];
         }
         average = sumAllArraysElements / tmpArray.length;
+        logger.info("Average from array : " + average);
         return average;
     }
 
@@ -41,6 +48,7 @@ public class ArrayServiceImpl implements ArrayService {
                 max = tmpArray[i];
             }
         }
+        logger.info(max);
         return max;
     }
 
@@ -56,6 +64,7 @@ public class ArrayServiceImpl implements ArrayService {
                 min = tmpArray[i];
             }
         }
+        logger.info(min);
         return min;
     }
 
@@ -74,6 +83,7 @@ public class ArrayServiceImpl implements ArrayService {
         for (int i = 0; i < tmpArray.length; i++) {
             sumAllArraysElements += tmpArray[i];
         }
+        logger.info("Sum of all array elements: " + sumAllArraysElements);
         return sumAllArraysElements;
     }
 
@@ -82,10 +92,11 @@ public class ArrayServiceImpl implements ArrayService {
         int[] tmpArray = arrayEntity.getArrayEntity();
         int counter = 0;
         for (int i = 0; i < tmpArray.length; i++) {
-            if (tmpArray[i] >= 0) {
+            if (tmpArray[i] > 0) {
                 counter++;
             }
         }
+        logger.info("Number of positive array elements : " + counter);
         return counter;
     }
 
@@ -98,6 +109,7 @@ public class ArrayServiceImpl implements ArrayService {
                 counter++;
             }
         }
+        logger.info("Number of negative array elements : " + counter);
         return counter;
     }
 }

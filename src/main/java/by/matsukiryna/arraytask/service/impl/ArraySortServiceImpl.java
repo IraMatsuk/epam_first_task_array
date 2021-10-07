@@ -3,8 +3,14 @@ package by.matsukiryna.arraytask.service.impl;
 import by.matsukiryna.arraytask.entity.ArrayEntity;
 import by.matsukiryna.arraytask.exception.ArrayException;
 import by.matsukiryna.arraytask.service.ArraySortService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public class ArraySortServiceImpl implements ArraySortService {
+    static Logger logger = LogManager.getLogger();
+
     @Override
     public void bubbleSort(ArrayEntity arrayEntity) throws ArrayException {
         int[] tmpArray = arrayEntity.getArrayEntity();
@@ -22,7 +28,7 @@ public class ArraySortServiceImpl implements ArraySortService {
     }
 
     @Override
-    public void insertionSort(ArrayEntity arrayEntity) {
+    public void insertionSort(ArrayEntity arrayEntity) throws ArrayException {
         int[] tmpArray = arrayEntity.getArrayEntity();
         for (int i = 1; i < tmpArray.length; i++) {
             int current = tmpArray[i];
@@ -33,10 +39,11 @@ public class ArraySortServiceImpl implements ArraySortService {
             }
             tmpArray[j] = current;
         }
+        arrayEntity.setArrayEntity(tmpArray);
     }
 
     @Override
-    public void selectionSort(ArrayEntity arrayEntity) {
+    public void selectionSort(ArrayEntity arrayEntity) throws ArrayException {
         int[] tmpArray = arrayEntity.getArrayEntity();
         for (int i = 0; i < tmpArray.length; i++) {
             int min = tmpArray[i];
@@ -53,5 +60,6 @@ public class ArraySortServiceImpl implements ArraySortService {
                 tmpArray[minId] = tmp;
             }
         }
+        arrayEntity.setArrayEntity(tmpArray);
     }
 }

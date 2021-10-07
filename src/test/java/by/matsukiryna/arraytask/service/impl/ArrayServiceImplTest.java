@@ -19,23 +19,19 @@ public class ArrayServiceImplTest {
         };
     }*/
 
-    public ArrayServiceImplTest() throws ArrayException {
-    }
+//    @Test
+//    public void testReplace() throws ArrayException {
+//        final ArrayEntity arrayEntity = new ArrayEntity(new int[] {1, 0, -4, 3, -3});
+//        int[] expected = new int[]{1, 99, -4, 3, -3};
+//        int[] actual = service.replace(arrayEntity, 0, 99);
+//        assertEquals(actual, expected);
+//    }
 
-    @Test
-    public void testReplace() throws ArrayException {
-        final ArrayEntity arrayEntity = new ArrayEntity(new int[] {1, 0, -4, 3, -3});
-        int[] actual = service.replace(arrayEntity, 0, 99);
-        int[] expected = new int[]{1, 99, -4, 3, -3};
-
-        assertEquals(actual, expected);
-    }
-
-    @Test
+    @Test()
     public void testFindAverage() throws ArrayException {
         final ArrayEntity arrayEntity = new ArrayEntity(new int[] {2, 8, -4, 3, 6, 0});
-        double actual = service.findAverage(arrayEntity);
         double expected = 2.5;
+        double actual = service.findAverage(arrayEntity);
         assertEquals(actual, expected);
     }
 
@@ -50,16 +46,16 @@ public class ArrayServiceImplTest {
     @Test
     public void testFindMin() throws ArrayException {
         final ArrayEntity arrayEntity = new ArrayEntity(new int[] {1, -8, 0, 1, 12});
-        int actual = service.findMin(arrayEntity);
         int expected = -8;
+        int actual = service.findMin(arrayEntity);
         assertEquals(actual, expected);
     }
 
     @Test
     public void testSumArray() throws ArrayException{
         final ArrayEntity arrayEntity = new ArrayEntity(new int[] {2, 8, -4, 3, 6, 0});
-        int actual = service.sumArray(arrayEntity);
         int expected = 15;
+        int actual = service.sumArray(arrayEntity);
         assertEquals(actual, expected);
     }
 
@@ -72,24 +68,16 @@ public class ArrayServiceImplTest {
     @Test
     public void testCountPositiveArrayElement() throws ArrayException {
         final ArrayEntity arrayEntity = new ArrayEntity(new int[] {2, 8, -4, 3, 6, 0});
-        int actual = service.countPositiveArrayElement(arrayEntity);
         int expected = 5;
+        int actual = service.countPositiveArrayElement(arrayEntity);
         assertEquals(actual, expected);
     }
 
     @Test
     public void testCountNegativeArrayElement() throws ArrayException {
         final ArrayEntity arrayEntity = new ArrayEntity(new int[] {2, -8, -4, 3, 6, 0});
-        int actual = service.countNegativeArrayElement(arrayEntity);
         int expected = 2;
+        int actual = service.countNegativeArrayElement(arrayEntity);
         assertEquals(actual, expected);
-    }
-
-    @Test
-    public void testBubbleSort() {
-    }
-
-    @Test
-    public void testQuickSort() {
     }
 }
