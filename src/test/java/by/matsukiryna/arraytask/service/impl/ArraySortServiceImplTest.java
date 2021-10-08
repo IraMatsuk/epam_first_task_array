@@ -8,50 +8,50 @@ import org.testng.annotations.Test;
 public class ArraySortServiceImplTest {
 
     @Test
-    public void testBubbleSort() throws ArrayException {
+    public void testBubbleSortAscending() throws ArrayException {
         //given
         ArraySortServiceImpl sortService = new ArraySortServiceImpl();
         int[] startArray = {10, 4, 0, -2, 20};
         int[] sortedArray = {-2, 0, 4, 10, 20};
-        ArrayEntity arrayEntity = new ArrayEntity(startArray);
-        ArrayEntity toBeCompared = new ArrayEntity(sortedArray);
+        ArrayEntity expected = new ArrayEntity(sortedArray);
 
         //when
-        sortService.bubbleSort(arrayEntity);
+        ArrayEntity actual = new ArrayEntity(startArray);
+        sortService.bubbleSort(actual);
 
         //then
-        Assert.assertEquals(toBeCompared, arrayEntity);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testInsertionSort() throws ArrayException {
+    public void testInsertionSortAscending() throws ArrayException {
         //given
         ArraySortServiceImpl sortService = new ArraySortServiceImpl();
         int[] startArray = {10, 4, 0, -2, 20};
         int[] sortedArray = {-2, 0, 4, 10, 20};
-        ArrayEntity arrayEntity = new ArrayEntity(startArray);
-        ArrayEntity toBeCompared = new ArrayEntity(sortedArray);
+        ArrayEntity expected = new ArrayEntity(sortedArray);
 
         //when
-        sortService.insertionSort(arrayEntity);
+        ArrayEntity actual = new ArrayEntity(startArray);
+        sortService.insertionSort(actual);
 
         //then
-        Assert.assertEquals(toBeCompared, arrayEntity);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testSelectionSort() throws ArrayException {
+    public void testSelectionSortAscending() throws ArrayException {
         //given
         ArraySortServiceImpl sortService = new ArraySortServiceImpl();
         int[] startArray = {10, 4, 0, -2, 20};
         int[] sortedArray = {-2, 0, 4, 10, 20};
-        ArrayEntity arrayEntity = new ArrayEntity(startArray);
-        ArrayEntity toBeCompared = new ArrayEntity(sortedArray);
+        ArrayEntity expected = new ArrayEntity(sortedArray);
 
         //when
-        sortService.selectionSort(arrayEntity);
+        ArrayEntity actual = new ArrayEntity(startArray);
+        sortService.selectionSort(actual);
 
         //then
-        Assert.assertEquals(toBeCompared, arrayEntity);
+        Assert.assertEquals(expected, actual);
     }
 }
