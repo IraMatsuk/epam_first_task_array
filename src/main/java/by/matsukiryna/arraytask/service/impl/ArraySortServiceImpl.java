@@ -3,13 +3,9 @@ package by.matsukiryna.arraytask.service.impl;
 import by.matsukiryna.arraytask.entity.ArrayEntity;
 import by.matsukiryna.arraytask.exception.ArrayException;
 import by.matsukiryna.arraytask.service.ArraySortService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
 
 public class ArraySortServiceImpl implements ArraySortService {
-    static Logger logger = LogManager.getLogger();
 
     @Override
     public void bubbleSort(ArrayEntity arrayEntity) throws ArrayException {

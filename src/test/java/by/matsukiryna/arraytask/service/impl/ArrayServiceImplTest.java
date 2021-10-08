@@ -57,4 +57,14 @@ public class ArrayServiceImplTest {
         int actual = service.countNegativeArrayElement(arrayEntity);
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void testReplaceElements() throws ArrayException {
+        ArrayEntity arrayEntity = new ArrayEntity(new int[] {2, -8, -4, 3, 6, 0});
+        int oldElement = 0;
+        int newElement = 99;
+        int[] expected = new int[] {2, -8, -4, 3, 6, 99};
+        int[] actual = service.replace(arrayEntity, oldElement, newElement);
+        assertEquals(actual, expected);
+    }
 }
