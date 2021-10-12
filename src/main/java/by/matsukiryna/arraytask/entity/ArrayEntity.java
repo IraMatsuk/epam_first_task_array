@@ -11,9 +11,6 @@ public class ArrayEntity {
     }
 
     public ArrayEntity(int...arrayEntity) throws ArrayException {
-        if (arrayEntity == null) {
-            throw new ArrayException("The incoming array is null. The new ArrayEntity was not created");
-        }
         this.arrayEntity = arrayEntity;
     }
 
@@ -21,11 +18,8 @@ public class ArrayEntity {
         return Arrays.copyOf(arrayEntity, arrayEntity.length);
     }
 
-    public void setArrayEntity(int[] arrayEntity) throws ArrayException {
-        if (arrayEntity == null) {
-            throw new ArrayException("The incoming array is null.");
-        }
-        this.arrayEntity = arrayEntity;
+    public void setArrayEntity(int[] arrayEntity) {
+        this.arrayEntity = Arrays.copyOf(arrayEntity, arrayEntity.length);
     }
 
     public int getLength() {
@@ -37,13 +31,6 @@ public class ArrayEntity {
             throw new ArrayException("Index: " + index + " is out of range.");
         }
         return arrayEntity[index];
-    }
-
-    public void setElementIndex(int index, int value) throws ArrayException {
-        if (index < 0 || index > arrayEntity.length) {
-            throw new ArrayException("Index: " + index + " is out of range.");
-        }
-        arrayEntity[index] = value;
     }
 
     @Override

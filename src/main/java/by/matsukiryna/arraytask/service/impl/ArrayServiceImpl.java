@@ -32,15 +32,12 @@ public class ArrayServiceImpl implements ArrayService {
             sumAllArraysElements += tmpArray[i];
         }
         average = sumAllArraysElements / tmpArray.length;
-        logger.info("Average from array : " + average);
+        logger.info("Average from array: " + average);
         return average;
     }
 
     @Override
     public int findMax(ArrayEntity arrayEntity) throws ArrayException {
-        if (isEmpty(arrayEntity) || arrayEntity == null) {
-            throw new ArrayException("Array is empty");
-        }
         int[] tmpArray = arrayEntity.getArrayEntity();
         int max = tmpArray[0];
         for (int i = 0; i < tmpArray.length; i++) {
@@ -48,15 +45,12 @@ public class ArrayServiceImpl implements ArrayService {
                 max = tmpArray[i];
             }
         }
-        logger.info(max);
+        logger.info("Max element from array: " + max);
         return max;
     }
 
     @Override
     public int findMin(ArrayEntity arrayEntity) throws ArrayException {
-        if (isEmpty(arrayEntity) || arrayEntity == null) {
-            throw new ArrayException("Array is empty");
-        }
         int[] tmpArray = arrayEntity.getArrayEntity();
         int min = tmpArray[0];
         for (int i = 0; i < tmpArray.length; i++) {
@@ -64,16 +58,8 @@ public class ArrayServiceImpl implements ArrayService {
                 min = tmpArray[i];
             }
         }
-        logger.info(min);
+        logger.info("Min element from array" + min);
         return min;
-    }
-
-    private boolean isEmpty(ArrayEntity arrayEntity) {
-        if (arrayEntity.getArrayEntity().length <= 0) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override
