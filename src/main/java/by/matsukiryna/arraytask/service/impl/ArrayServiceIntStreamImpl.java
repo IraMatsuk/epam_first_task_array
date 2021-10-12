@@ -7,9 +7,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ArrayServiceIntStreamImpl implements ArrayService {
     static Logger logger = LogManager.getLogger();
@@ -64,8 +66,8 @@ public class ArrayServiceIntStreamImpl implements ArrayService {
 
     @Override
     public int[] replace(ArrayEntity arrayEntity, int oldNumber, int newNumber) {
-        IntStream intStream = Arrays.stream(arrayEntity.getArrayEntity());
         //TODO
+        IntStream intStream = Arrays.stream(arrayEntity.getArrayEntity());
         return intStream.toArray();
     }
 }

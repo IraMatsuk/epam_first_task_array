@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ScriptForFullCycle" verbose="1">
+    <test name="FullCircleWorkTest">
+        <groups>
+            <run>
+                <include name="mainGroup"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="by.matsukiryna.arraytask.reader.DataReaderTest"/>
+            <class name="by.matsukiryna.arraytask.parser.impl.StringParserImplTest"/>
+        </classes>
+    </test>
+
+    <test name="DataReader Test - select method in class">
+        <classes>
+            <class name="by.matsukiryna.arraytask.reader.DataReaderTest">
+                <methods>
+                    <include name="testReadFromFileWhenFilePathIsCorrect"/>
+                    <include name="testReadFromFileWhenFilePathIsNotCorrect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Groups of groups: NULL EMPTY EXCEPTION">
+        <groups>
+            <define name="Exception">
+                <include name="ArrayException"/>
+            </define>
+            <define name="NullAndEmptyAndCustomException">
+                <include name="ArrayException"/>
+                <include name="NullAndEmpty"/>
+            </define>
+            <run>
+                <!--<include name="NullAndEmptyAndCustomException"/>-->
+                <!--missing tests from group: NullAndEmpty (ParserTest -> negativeInputArrayStringIsNull)-->
+                <include name="ArrayException"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="by.matsukiryna.arraytask.parser.impl.StringParserImplTest"/>
+            <class name="by.matsukiryna.arraytask.reader.DataReaderTest"/>
+
+            <class name="com.danko.customarray.maker.CustomArrayMakerTest"/>
+            <class name="com.danko.customarray.service.CustomArraySortsServiceImplTest"/>
+
+        </classes>
+    </test>
+
+</suite>
